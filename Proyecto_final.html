@@ -1,0 +1,309 @@
+
+	<head>
+		<title>Proyecto final javascript</title>
+		<meta charset="UFT-8">
+		<script>
+			function dia_actual(){            //Esta funcion resalta las asignaturas del dia en que te encuentras
+			var hoy= new Date;
+			var dia=hoy.getDay();
+				if(dia==1) {
+					document.getElementById('dia2').style.background= 'white';
+					document.getElementById('dia3').style.background= 'white';
+					document.getElementById('dia4').style.background= 'white';
+					document.getElementById('dia5').style.background= 'white';
+				}
+				if(dia==2) {
+					document.getElementById('dia1').style.background= 'white';
+					document.getElementById('dia3').style.background= 'white';
+					document.getElementById('dia4').style.background= 'white';
+					document.getElementById('dia5').style.background= 'white';
+				}
+				if(dia==3) {
+					document.getElementById('dia1').style.background= 'white';
+					document.getElementById('dia2').style.background= 'white';
+					document.getElementById('dia4').style.background= 'white';
+					document.getElementById('dia5').style.background= 'white';
+				}
+				if(dia==4) {
+					document.getElementById('dia1').style.background= 'white';
+					document.getElementById('dia2').style.background= 'white';
+					document.getElementById('dia3').style.background= 'white';
+					document.getElementById('dia5').style.background= 'white';
+				}
+				if(dia==5) {
+					document.getElementById('dia1').style.background= 'white';
+					document.getElementById('dia2').style.background= 'white';
+					document.getElementById('dia3').style.background= 'white';
+					document.getElementById('dia4').style.background= 'white';
+				}
+			}
+			
+			function tic(){			//Esta funcion colorea el boton de la asignatura que se pulsa (Tic)
+				document.getElementById("tic").style.background='#ffff99';
+				document.getElementById("ingles").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				
+				}
+			function ingles(){	 //Esta funcion colorea el boton de la asignatura que se pulsa (ingles)
+				document.getElementById("ingles").style.background='#lightgrey';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function lengua(){		//Esta funcion colorea el boton de la asignatura que se pulsa (lengua)
+				document.getElementById("lengua").style.background='#80ffff';
+				document.getElementById("ingles").style.background='#white';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function historia(){		//Esta funcion colorea el boton de la asignatura que se pulsa (historia)
+				document.getElementById("historia").style.background='#990099';
+				document.getElementById("ingles").style.background='#white';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function tecno(){		//Esta funcion colorea el boton de la asignatura que se pulsa (tecnologia industrial)
+				document.getElementById("tecno").style.background='#ffb380';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function mate(){		//Esta funcion colorea el boton de la asignatura que se pulsa (matematicas)
+				document.getElementById("mate").style.background='#ff4d4d';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function fisica(){		//Esta funcion colorea el boton de la asignatura que se pulsa (física)
+				document.getElementById("fisica").style.background='#99ff99';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("ingles").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("dibujo").style.background='white';
+				}
+			function dibujo(){			//Esta funcion colorea el boton de la asignatura que se pulsa (dibujo)
+				document.getElementById("dibujo").style.background='#999900';
+				document.getElementById("tic").style.background='white';
+				document.getElementById("ingles").style.background='white';
+				document.getElementById("lengua").style.background='white';
+				document.getElementById("historia").style.background='white';
+				document.getElementById("tecno").style.background='white';
+				document.getElementById("mate").style.background='white';
+				document.getElementById("fisica").style.background='white';
+				}
+				
+				
+			
+			var k = {
+					media : function(){
+						var r = (this.tic + this.ingles + this.lengua + this.historia + this.matematicas + this.fisica + this.dibujo + this.tecnologia_industrial) / 8;
+						return Math.round(r*100)/100;
+					}
+			};
+			function f(){ //Esta funcion recoge las notas escritas y junto con la variable anterior realiza la media aritmetica
+				k.tic = document.getElementById("dato1").value;
+				k.ingles = document.getElementById("dato2").value;
+				k.lengua = document.getElementById("dato3").value;
+				k.historia = document.getElementById("dato4").value;
+				k.matematicas = document.getElementById("dato5").value;
+				k.fisica = document.getElementById("dato6").value;
+				k.dibujo = document.getElementById("dato7").value;
+				k.tecno = document.getElementById("dato8").value;
+				document.getElementById("resultado").innerHTML = k.media();
+				}
+				
+			function marcar(celda){ 
+			 celda.style.background="white";
+			 celda.style.color="white";
+			} 
+		</script>
+	
+			
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"> </script> 
+		<script>
+		// El siguiente script contiene una funcion de processing en la que dos cuadrados se alejan o acercan dependiendo de la posicion del mouse
+			function cuadrados() {
+			  createCanvas(720, 400);
+			  noStroke();
+			  rectMode(CENTER);
+		
+			  background(230);
+
+			  var r1 = map(mouseX, 0, width, 0, height);
+			  var r2 = height - r1;
+			  
+			  fill(237,34,93,r1);
+			  rect(width/2 + r1/2, height/2, r1, r1);
+			  
+			  fill(237,34,93,r2);
+			  rect(width/2 - r2/2, height/2, r2, r2);
+			}
+			</script>
+	</head>
+	<style> 
+	//Estilo de la tabla
+		table{
+			border-radius:5px;
+		}
+	
+		td{
+			text-align:center;
+			border-radius:5px;
+			}
+		#processing{
+			width=720px;
+			height=400px;
+		}
+			
+	</style> 
+	<body onload="dia_actual()" onload="cuadrados()"> 
+	<!--Al cargar la pagina se ejecuta la funcion del dia_actual y el processing-->
+	<h1>Hecho por Ángela Iglesias e Iván Zapatera</h1>
+		<table border="1" id="processing" > 
+			<tr>
+			</tr>
+		</table>
+		<canvas onload="cuadrado" style="width: 720px; height: 400px;"></canvas>
+		<header>
+			<h1>Horario</h1>
+		</header>
+		<table border="1"> <!--//Tabla que contiene las asignaturas y días del horario-->
+			<tr>
+				<td> <strong>Lunes</strong> </td>
+				<td> <strong>Martes</strong> </td>
+				<td> <strong>Miércoles</strong> </td>
+				<td> <strong>Jueves</strong> </td>
+				<td> <strong>Viernes</strong> </td>
+			</tr>
+			<tr>
+			<!--bgcolor indica el color de fondo, al hacer click en cada una de las asignaturas, se oculta-->
+				<td bgcolor="#99ff99" id="dia1" onclick="marcar(this)" id="fisica">Física</td>  
+				<td bgcolor="#ff4d4d" id="dia2" onclick="marcar(this)" id="mate">Matemáticas</td>
+				<td bgcolor="#80ffff" id="dia3" onclick="marcar(this)" id="lengua">Lengua</td>
+				<td bgcolor="#ff4d4d" id="dia4" onclick="marcar(this)" id="mate">Matemáticas</td>
+				<td bgcolor="#ffb380" id="dia5" onclick="marcar(this)" id="tecno">Tecno industrial</td>
+			</tr>
+			<tr>
+				<td bgcolor="#ffb380"id="dia1" onclick="marcar(this)" id="tecno">Tecno industrial</td>
+				<td bgcolor="#lightgrey" id="dia2" onclick="marcar(this)" id="ingles">Inglés</td>
+				<td bgcolor="#ffb380" id="dia3" onclick="marcar(this)" id="tecno">Tecno industrial</td>
+				<td bgcolor="#999900" id="dia4" onclick="marcar(this)" id="dibujo">Dibujo</td>
+				<td bgcolor="#lightgrey" id="dia5" onclick="marcar(this)" id="ingles">Inglés</td>
+			</tr>
+			<tr>
+				<td bgcolor="#ff4d4d" id="dia1" onclick="marcar(this)" >Matemáticas</td>
+				<td bgcolor="#999900" id="dia2" onclick="marcar(this)" >Dibujo</td>
+				<td bgcolor="#999900" id="dia3" onclick="marcar(this)" >Dibujo</td>
+				<td bgcolor="#ffb380" id="dia4" onclick="marcar(this)" >Tecno industrial</td>
+				<td bgcolor="#99ff99" id="dia5" onclick="marcar(this)">Física</td>
+
+			</tr>
+			<tr>
+				<td colspan="5">Recreo</td>
+			</tr>
+			<tr>
+				<td bgcolor="#80ffff" id="dia5" onclick="marcar(this)">Lengua</td>
+				<td bgcolor="#99ff99" id="dia2" onclick="marcar(this)">Física</td>
+				<td bgcolor="#ffff99" id="dia3" onclick="marcar(this)">TIC</td>
+				<td bgcolor="#ffff99" id="dia4" onclick="marcar(this)">TIC</td>
+				<td bgcolor="#80ffff" id="dia5" onclick="marcar(this)">Lengua</td>
+			</tr>
+			<tr>
+				<td bgcolor="#990099" id="dia1" onclick="marcar(this)">Historia</td>
+				<td bgcolor="#990099" id="dia2" onclick="marcar(this)">Historia</td>
+				<td bgcolor="#990099" id="dia3" onclick="marcar(this)">Historia</td>
+				<td bgcolor="#99ff99" id="dia4" onclick="marcar(this)">Física</td>
+				<td bgcolor="#ffff99" id="dia5" onclick="marcar(this)">TIC</td>
+			</tr>
+			<tr>
+				<td bgcolor="#lightgrey" id="dia1" onclick="marcar(this)">Inglés</td>
+				<td bgcolor="#80ffff" id="dia5" onclick="marcar(this)">Lengua</td>
+				<td bgcolor="#ff4d4d" id="dia3" onclick="marcar(this)" >Matemáticas</td>
+				<td bgcolor="#990099" id="dia4" onclick="marcar(this)">Historia</td>
+				<td bgcolor="#999900" id="dia5" onclick="marcar(this)" >Dibujo</td>
+			</tr>
+		</table>
+		<br>
+		<h1>Asignaturas</h1> <!-- Botones que al seleccionarlos se cambian de color dependiendo de la asignatura-->
+		<button id="tic" onclick="tic()">TIC</button> 
+		<button id="ingles" onclick="ingles()">Inglés</button>
+		<button id="lengua" onclick="lengua()">Lengua</button>
+		<button id="historia" onclick="historia()">Historia</button>
+		<button id="tecno"onclick="tecno()"> Tecnología Industrial</button>
+		<button id="mate" onclick="mate()">Matemáticas</button>
+		<button id="fisica" onclick="fisica()">Física</button>
+		<button id="dibujo" onclick="dibujo()">Dibujo</button>
+		<br>
+		<h1>Medias asiganaturas</h1> <!--Tabla en la que se introducen las notas para obtener la media total-->
+		<table border="1">
+			<tr>
+				<td><strong>Asignatura<strong></td>
+				<td><strong>Notas<strong></td>
+			</tr>
+			<tr>
+				<td>TIC</td>
+				<td><input type="text"id="dato1"></td>
+			</tr>
+			<tr>
+				<td>Inglés</td>
+				<td><input type="text"id="dato2"></td>
+			</tr>
+			<tr>
+				<td>Lengua</td>
+				<td><input type="text"id="dato3"></td>
+			</tr>
+			<tr>
+				<td>Historia</td>
+				<td><input type="text"id="dato4"></td>
+			</tr>
+			<tr>
+				<td>Matemáticas</td>
+				<td><input type="text"id="dato5"></td>
+			</tr>
+			<tr>
+				<td>Física</td>
+				<td><input type="text"id="dato6"></td>
+			</tr>
+			<tr>
+				<td>Dibujo</td>
+				<td><input type="text"id="dato7"></td>
+			</tr>
+			<tr>
+				<td>Tecnología Insdustrial</td>
+				<td><input type="text" id="dato8"></td>
+			</tr>
+			<tr>
+				<td><button onclick="f()">Calcular media</button></td>
+				<td><span id="resultado"></span> </td>
+			</tr>
+			</table>
+			<br>
+			<span></span>
+	</body>
+</html>
